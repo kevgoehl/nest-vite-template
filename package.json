@@ -1,0 +1,31 @@
+{
+  "name": "sc-hub-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "node scripts/run-dev.mjs",
+    "build": "npm --workspace apps/frontend run build && npm --workspace apps/backend run build",
+    "start": "npm --workspace apps/backend run start",
+    "start:all": "npm run build && npm start",
+    "lint": "eslint \"apps/**/*.{ts,tsx,js,jsx}\"",
+    "format": "prettier -w .",
+    "typecheck": "npm --workspace apps/frontend run typecheck && npm --workspace apps/backend run typecheck"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.41.0",
+    "@typescript-eslint/parser": "^8.41.0",
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "prettier": "^3.6.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

@@ -1,0 +1,22 @@
+name: Bug report
+description: File a bug report
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened and what did you expect?
+    validations:
+      required: true
+  - type: input
+    id: repro
+    attributes:
+      label: Reproduction steps
+      placeholder: npm run dev, then ...
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: OS, Node, npm versions
+
